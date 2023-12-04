@@ -34,7 +34,5 @@ public class TestCourse {
 		c.setFee(12000);
 		c.print();
 		System.out.println(c.getNetFee());
-
 	}
-
 }
