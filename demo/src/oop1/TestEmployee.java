@@ -2,7 +2,7 @@ package oop1;
 
 class Employee {
 	private String name;
-	private int salary;
+	protected int salary;
 
 	public Employee(String name, int salary) {
 		super();
@@ -11,14 +11,13 @@ class Employee {
 	}
 
 	public void print() {
-		System.out.println(this.name);
+		System.out.println(this.name);  // compile-time polymoprhism 
 		System.out.println(this.salary);
 	}
-
+	
 	public int getSalary() {
 		return this.salary;
 	}
-
 }
 
 class Manager extends Employee {
@@ -35,9 +34,8 @@ class Manager extends Employee {
 		System.out.println(this.hra);
 	}
 
-	@Override
 	public int getSalary() {
-		return super.getSalary() + this.hra;
+		return super.salary + this.hra;
 	}
 
 	public int getHra() {
@@ -59,9 +57,9 @@ class MarketingExecutive extends Employee {
 		System.out.println(this.ta);
 	}
 
-	@Override
+	
 	public int getSalary() {
-		return super.getSalary() + this.ta;
+		return super.salary + this.ta;
 	}
 
 	public int getTa() {
@@ -71,19 +69,15 @@ class MarketingExecutive extends Employee {
 
 public class TestEmployee {
 	public static void main(String[] args) {
-		Employee e = new Employee("Larry", 100000);
+        Employee e;
+        
+		e = new Manager("Ellison", 200000, 50000);
+		e.print();  // runtime polymorphism 
 		System.out.println(e.getSalary());
-
-		Manager m = new Manager("Ellison", 200000, 50000);
-		m.print();
-		System.out.println(m.getSalary());
 		
-		e = m;  // Upcasting 
-		
-		//m = e; 
-		
-		
-
+		e = new MarketingExecutive("Tom", 50000, 20000);
+		e.print();  // runtime polymorphism 
+		System.out.println(e.getSalary());
 	}
 
 }
