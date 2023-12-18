@@ -2,6 +2,7 @@ package orders;
 
 public class Order {
    Payment pay;
+   Customer c;
    
 }
 

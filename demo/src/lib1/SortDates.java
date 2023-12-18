@@ -22,6 +22,7 @@ public class SortDates {
 		
 		for(var d : dates)
 			System.out.println(d);
+		
 	}
 
 }
