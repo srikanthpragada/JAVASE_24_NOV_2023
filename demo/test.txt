@@ -1,0 +1,4 @@
+This is to test how sorting unique words works.
+This can be done using split() of String class and TreeSet class.
+But it can only use space to split for now.
+

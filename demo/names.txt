@@ -3,3 +3,7 @@ Python
 C#
 JavaScript
 SQL
+Ruby
+Cobol
+C++
+PLSQL
