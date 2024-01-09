@@ -18,6 +18,7 @@ public class LargeNamesSorted {
 		 Path p = Path.of("names.txt");
 		 
 		 Files.lines(p)
+		      .distinct()
 		      .filter(s -> s.length() > 3) // new LargeName()
 		      .sorted()
 		      .forEach(System.out::println);
